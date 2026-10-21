@@ -6,7 +6,10 @@ function Footer() {
   return (
     <footer className={styles.Footer}>
       <div className={styles.MapBlock}>
-        <img src={Map} alt="Position Géographique Mon Vieux Grimoire" />
+        <div className={styles.Map}>
+          <img src={Map} alt="Position Géographique Mon Vieux Grimoire" />
+          <span className={styles.Pin} />
+        </div>
         <address>
           {'8 place Jeanne d\'Arc'}
           <br />
@@ -17,9 +20,9 @@ function Footer() {
           </a>
         </address>
       </div>
-      <p>01 12 23 34 45</p>
-      <p>Copyright 2022 - 2023</p>
-      <p>Mentions légales</p>
+      <p className={styles.Phone}>01 12 23 34 45</p>
+      <p className={styles.Copyright}>Copyright 2022-2023</p>
+      <p className={styles.Legal}>Mentions légales</p>
     </footer>
 
   );

@@ -51,6 +51,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F2E3CE;
+  font-family: "DM Sans", sans-serif;
+  color: #2C1810;
 }
 
 code {
@@ -102,7 +104,10 @@ button, .button {
   padding: 20px;
   border-radius: 5px;
   border: none;
+  font-family: "DM Sans", sans-serif;
   font-size: 16px;
+  line-height: normal;
+  cursor: pointer;
   transition: 0.5s;
 }
 

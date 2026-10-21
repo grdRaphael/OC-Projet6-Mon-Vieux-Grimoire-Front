@@ -9,42 +9,51 @@
 .Header div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+    /* Valeurs de la maquette à 1440px (70px, 86px, 74.5px), réduites en proportion
+       quand la fenêtre rétrécit. */
+    padding-inline: max(24px, min(70px, 4.86vw)) max(24px, min(86px, 5.97vw));
 }
 
-.Header p {
-    font-size: 20px;
+.Header img {
+    display: block;
+    width: 217px;
+    height: 26px;
 }
 
 .Header ul {
     display: flex;
+    gap: max(28px, min(74.5px, 5.17vw));
 }
 
 .Header ul li {
-    padding-inline: 20px;
     list-style-type: none;
+    font-size: 14px;
+    line-height: normal;
 }
 
-.Header ul li a {
+.Header ul li a, .Header ul li span {
     text-decoration: none;
-    color: black ;
+    color: #000000;
+    cursor: pointer;
 }
 
-.Header a.activeLink {
-    font-weight: bold;
+.Header ul li a:hover, .Header ul li span:hover {
+    color: #796157;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 720px) {
     .Header div {
         flex-direction: column;
-        align-items: center;
+        gap: 18px;
+        padding-block: 22px;
     }
 
-    .Header img {
-        margin-top: 20px;
-        width: 50%;
-    }
-
-    .Header ul li {
-        padding-block: 20px;
+    .Header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 32px;
     }
 }

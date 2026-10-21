@@ -1,6 +1,7 @@
 .Home {
- position: relative;padding-top: 131px;
-
+    position: relative;
+    padding-top: 131px;
+    padding-bottom: 70px;
 }
 
 .banner {
@@ -15,41 +16,97 @@
     z-index: -1;
 }
 
+/* Carte blanche de la maquette, doublée d'une seconde carte décalée de 10px / 9px. */
 .main {
-    width: 90%;
+    position: relative;
+    width: calc(100% - 120px);
     max-width: 1320px;
-    background-color: #FFFFFF;
+    box-sizing: border-box;
     margin: auto;
+    padding-bottom: 78px;
+    background-color: #FFFFFF;
     border-radius: 7px;
-    box-shadow:  0 4px 34px rgba(0, 0, 0, 0.07);;
-
+    box-shadow: 0 4px 34px rgba(0, 0, 0, 0.07);
 }
 
-.Home header {
-    text-align: center;
-    font-family: "Libre Baskerville", serif;
-    padding-top: 85px;
+.main::before {
+    content: "";
+    position: absolute;
+    inset: 9px -10px -9px 10px;
+    z-index: -1;
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.head {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 83px;
+    text-align: center;
 }
 
-.Home header h1 {
+.Courbe {
+    position: absolute;
+    top: 123px;
+    left: calc(50% - 398px);
+    width: 959.5px;
+    height: 177.2px;
+    max-width: none;
+    pointer-events: none;
+}
+
+.head h1, .head p, .head a {
+    position: relative;
+}
+
+.head h1 {
+    font-family: "Libre Baskerville", serif;
     font-style: italic;
     font-size: 44px;
+    line-height: normal;
     color: #796157;
 }
 
-.Home header p {
-    font-style: italic;
+.head p {
+    margin-top: 11px;
+    font-family: "Libre Baskerville", serif;
     font-size: 28px;
-    padding-block: 10px;
+    line-height: normal;
+    color: #2C1810;
 }
 
+.head a {
+    margin-top: 28px;
+    width: 146px;
+    box-sizing: border-box;
+    padding-inline: 0;
+}
 
 .bookList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-block: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 348px);
+    justify-content: center;
+    column-gap: 70px;
+    row-gap: 86px;
+    margin-top: 116px;
+    padding-inline: 20px;
+}
+
+@media all and (max-width: 1260px) {
+    .bookList {
+        grid-template-columns: repeat(2, 348px);
+    }
+}
+
+@media all and (max-width: 860px) {
+    .main {
+        width: calc(100% - 40px);
+        overflow: hidden;
+    }
+    .bookList {
+        grid-template-columns: minmax(0, 348px);
+    }
 }

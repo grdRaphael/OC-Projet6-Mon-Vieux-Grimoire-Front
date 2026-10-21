@@ -15,6 +15,16 @@
     font-size: 16px;
 }
 
+/* Titre et sous-titre : 15px d'écart dans la maquette. */
+.Container > h1 {
+    line-height: normal;
+}
+
+.Container > h1 + p {
+    margin-top: 15px;
+    line-height: normal;
+}
+
 .Created {
     display: flex;
     flex-direction: column;

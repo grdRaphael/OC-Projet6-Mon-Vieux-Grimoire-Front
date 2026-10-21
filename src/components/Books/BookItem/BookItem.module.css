@@ -1,68 +1,87 @@
-.BookItem{
-    display: flex;
+/* Vignette « Thumbnail book » de la maquette : 348 x 260, image 206 x 260 à gauche,
+   étoiles et informations dans une colonne de 123px, à 19px de l'image. */
+.BookItem {
+    display: block;
+    width: 348px;
+    max-width: 100%;
     text-decoration: none;
     color: inherit;
-    max-width: 360px;
-    width: 80%;
-    align-items: center;
-    margin-bottom: 85px;
+    border-radius: 10px;
 }
+
 .BookItem article {
     display: flex;
-    align-items: center;
-}
-
-
-.BookItem img {
-    border-radius: 5px;
-}
-.BookItem h2 {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: "Libre Baskerville", serif;
-    margin-bottom: 10px ;
+    align-items: flex-start;
+    gap: 19px;
 }
 
 .BookImage {
+    flex: none;
+    display: block;
     width: 206px;
     height: 260px;
+    border-radius: 5px;
+    object-fit: cover;
     object-position: center;
-    object-fit: contain;
-}
-.BookItem h3 {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: "Libre Baskerville", serif;
-    margin-bottom: 10px ;
-}
-.BookItem p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: #796157;
-    margin-bottom: 10px ;
-}
-.full {
-    color: #D9A963;
-    font-size: 23px;
-}
-.empty {
-    color : #F2E3CE;
-    font-size: 23px;
-}
-.BookInfo {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin-left: 18px;
-}
-.Rating{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    box-shadow: 0 3.3px 14px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-@media all and (max-width: 600px) {
-    .BookItem img {
+.BookItem:hover .BookImage {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(44, 24, 16, 0.14);
+}
+
+.BookInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8.24px;
+    width: 123px;
+    padding-top: 29.67px;
+}
+
+.Rating {
+    display: flex;
+    gap: 2.47px;
+    margin-left: -2.47px;
+    margin-bottom: 6.6px;
+}
+
+.BookItem h2, .BookItem h3 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 18.13px;
+    font-weight: 700;
+    line-height: normal;
+    color: #2C1810;
+}
+
+.BookItem p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.83px;
+    line-height: normal;
+    color: #796157;
+}
+
+.full, .empty {
+    display: block;
+    flex: none;
+    width: 23.075px;
+    height: 23.075px;
+}
+
+.full {
+    color: #D9A963;
+}
+
+.empty {
+    color: #F2E3CE;
+}
+
+@media all and (max-width: 400px) {
+    .BookImage {
         width: 50%;
+        height: auto;
+        aspect-ratio: 206 / 260;
     }
 }

@@ -1,27 +1,80 @@
 .Footer {
-    margin-top: auto;
+    /* Positions de la maquette : carte à 73px, adresse à 188px, téléphone à 373px,
+       copyright à 649px, mentions légales à 60px du bord droit. */
+    display: grid;
+    grid-template-columns: 300px 276px 1fr auto;
+    align-items: end;
+    box-sizing: border-box;
     width: 100%;
+    min-height: 112px;
+    margin-top: auto;
+    padding: 16px max(60px, calc(50% - 660px)) 26px max(73px, calc(50% - 647px));
     background-color: #FFFFFF;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
-    color: #2C1810
+    line-height: normal;
+    color: #2C1810;
 }
 
 .MapBlock {
     display: flex;
-    margin-block: 16px;
     align-items: center;
-
+    gap: 35px;
+    align-self: center;
+    margin-bottom: -10px;
 }
+
+.Map {
+    position: relative;
+    flex: none;
+    width: 80px;
+    height: 80px;
+}
+
+.Map img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+}
+
+.Pin {
+    position: absolute;
+    left: 33px;
+    top: 31px;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: #D9A963;
+    outline: 1px solid #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.MapBlock address {
+    font-style: normal;
+}
+
 .MapBlock a {
+    display: inline-block;
+    margin-top: 6px;
     color: #796157;
 }
-.MapBlock img {
-    margin-right: 16px;
-}
-.MapLink {
 
+.Copyright, .Legal {
+    margin-bottom: 4px;
+}
+
+@media all and (max-width: 900px) {
+    .Footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        gap: 16px;
+        padding: 24px 20px;
+    }
+    .MapBlock {
+        margin-bottom: 0;
+        text-align: left;
+    }
 }

@@ -10,4 +10,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    /* Même écart vertical que la grille de l'accueil (maquette : 86px). */
+    gap: 86px 14px;
 }

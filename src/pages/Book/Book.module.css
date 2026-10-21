@@ -104,6 +104,8 @@
     grid-column-end: 4;
 }
 .Rating div {
+    display: flex;
+    gap: 2px;
     margin-right: 20px;
 }
 

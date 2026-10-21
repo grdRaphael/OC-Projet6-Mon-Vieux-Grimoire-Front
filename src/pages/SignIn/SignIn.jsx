@@ -77,7 +77,10 @@ function SignIn({ setUser }) {
       <div className={`${styles.Notification} ${errorClass}`}>
         {notification.message.length > 0 && <p>{notification.message}</p>}
       </div>
-      <div className={styles.Form}>
+      <form
+        className={styles.Form}
+        onSubmit={(e) => { e.preventDefault(); signIn(); }}
+      >
         <label htmlFor={email}>
           <p>Adresse email</p>
           <input
@@ -107,7 +110,6 @@ function SignIn({ setUser }) {
             flex justify-center
             p-2 rounded-md w-1/2 self-center
             bg-gray-800  text-white hover:bg-gray-800"
-            onClick={signIn}
           >
             {isLoading ? <div className="" /> : null}
             <span>
@@ -116,7 +118,7 @@ function SignIn({ setUser }) {
           </button>
           <span>OU</span>
           <button
-            type="submit"
+            type="button"
             className="
             flex justify-center
             p-2 rounded-md w-1/2 self-center
@@ -133,7 +135,7 @@ function SignIn({ setUser }) {
           </button>
         </div>
 
-      </div>
+      </form>
     </div>
   );
 }

@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:4000';
+// Adresse de l'API : définie sur l'hébergeur (Vercel), localhost:4000 par défaut en local
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
   SIGN_IN: `${API_URL}/api/auth/login`,
